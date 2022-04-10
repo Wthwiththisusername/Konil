@@ -1,7 +1,7 @@
-const express = require ("expres");
+const express = require ("express");
 const app = express();
-const post = 3000;
-app.get('/', (( req, res) => {
+const port = 3000;
+app.get('/index', (( req, res) => {
     res.sendFile(__dirname+'index.html')
 }))
 app.get('/user', (( req, res) => {
@@ -16,6 +16,6 @@ app.get('/news', (( req, res) => {
 app.get('/contacts', (( req, res) => {
     res.sendFile(__dirname+'contacts.html')
 }))
-
-const colors = require("colors");
-console.log(colors.purple(''));
+app.listen(port, () =>
+    console.log(`App listening at http://localhost:${port}`)
+);
